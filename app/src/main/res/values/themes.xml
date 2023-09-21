@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.JokesAboutChuck" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryDark">@color/orange_light</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimarySurface">@color/yellow_light</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/red</item>
+        <item name="colorSecondaryVariant">@color/red_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/orange</item>
+    </style>
+
+    <style name="Theme.JokesAboutChuck" parent="Base.Theme.JokesAboutChuck" />
+</resources>

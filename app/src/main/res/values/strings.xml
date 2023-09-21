@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jokes About Chuck</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="give_me_joke">Дай мне еще шутку!</string>
+    <string name="create_joke">Я тоже знаю одну!</string>
+</resources>
