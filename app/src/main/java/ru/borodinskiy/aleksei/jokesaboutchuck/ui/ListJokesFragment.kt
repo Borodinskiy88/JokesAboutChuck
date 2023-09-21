@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
+import ru.borodinskiy.aleksei.jokesaboutchuck.R
 import ru.borodinskiy.aleksei.jokesaboutchuck.adapter.JokesAdapter
 import ru.borodinskiy.aleksei.jokesaboutchuck.adapter.OnInteractionListener
 import ru.borodinskiy.aleksei.jokesaboutchuck.databinding.FragmentListJokesBinding
@@ -34,7 +37,10 @@ class ListJokesFragment : Fragment () {
 
         adapter = JokesAdapter(object : OnInteractionListener {
             override fun onShowDetail(jokes: Jokes) {
-                TODO("Not yet implemented")
+                val bundle = bundleOf(
+                    Pair("jokeId", jokes.jokeId)
+                )
+                findNavController().navigate(R.id.action_listJokesFragment_to_singleJokeFragment, bundle)
             }
 
         })

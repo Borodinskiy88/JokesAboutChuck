@@ -6,13 +6,12 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Jokes(
-//    @SerializedName("categories")
-//    val categories: List<Categories>,
+    @PrimaryKey(autoGenerate = true)
+    val jokeId: Int = 0,
     @SerializedName("created_at")
     val created: String,
     @SerializedName("icon_url")
     val iconUrl: String,
-    @PrimaryKey
     @SerializedName("id")
     val id: String,
     @SerializedName("updated_at")

@@ -15,6 +15,8 @@ class JokesViewModel @Inject constructor(
 
     val allJokes = repository.allJokes.asLiveData()
 
+    fun getJokeById(jokeId : Int) = repository.getJokeById(jokeId).asLiveData()
+
     fun getJoke() : LiveData<Jokes> = repository.getJoke().asLiveData()
 
 

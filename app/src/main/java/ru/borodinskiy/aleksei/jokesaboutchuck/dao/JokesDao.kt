@@ -10,8 +10,11 @@ import ru.borodinskiy.aleksei.jokesaboutchuck.entity.Jokes
 @Dao
 interface JokesDao {
 
-    @Query("SELECT * FROM Jokes ORDER BY id DESC")
+    @Query("SELECT * FROM Jokes ORDER BY jokeId DESC")
     fun getJokes(): Flow<List<Jokes>>
+
+    @Query("SELECT * from Jokes WHERE jokeId = :jokeId")
+    fun getJokesById(jokeId : Int): Flow<List<Jokes>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(joke: Jokes)
