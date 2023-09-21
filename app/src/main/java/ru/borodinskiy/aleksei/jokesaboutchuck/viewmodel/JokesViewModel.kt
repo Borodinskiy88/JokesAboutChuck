@@ -13,7 +13,10 @@ class JokesViewModel @Inject constructor(
     private val repository: JokesRepositoryImpl
 ) : ViewModel() {
 
-    val allJokes = repository.getJoke().asLiveData()
+    val allJokes = repository.allJokes.asLiveData()
 
     fun getJoke() : LiveData<Jokes> = repository.getJoke().asLiveData()
+
+
+
 }

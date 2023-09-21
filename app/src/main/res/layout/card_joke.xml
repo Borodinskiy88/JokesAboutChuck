@@ -15,10 +15,12 @@
 
     <TextView
         android:id="@+id/value"
-        android:text="Шуточка о Чаке Норрисе"
+        android:text="@string/joke"
+        android:ellipsize="end"
+        android:singleLine="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="27sp"
+        android:textSize="18sp"
         android:padding="@dimen/margin_4"
         android:textColor="@color/black"
         android:layout_width="match_parent"
@@ -26,13 +28,14 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/show_button"
-        android:text="Ну-ка поподробнее!"
-        android:textSize="27sp"
+        android:text="@string/show_detail"
+        android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/value"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/margin_16"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listJokesFragment"
         android:name="ru.borodinskiy.aleksei.jokesaboutchuck.ui.ListJokesFragment"
-        android:label="fragment_list_jokes"
+        android:label="Факты о Чаке Норрисе"
         tools:layout="@layout/fragment_list_jokes" >
         <action
             android:id="@+id/action_listJokesFragment_to_singleJokeFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/singleJokeFragment"
         android:name="ru.borodinskiy.aleksei.jokesaboutchuck.ui.SingleJokeFragment"
-        android:label="fragment_single_joke"
+        android:label="Факт"
         tools:layout="@layout/fragment_single_joke" >
         <action
             android:id="@+id/action_singleJokeFragment_to_listJokesFragment"

@@ -21,6 +21,7 @@
             android:background="?attr/colorPrimaryDark"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
             app:titleTextColor="?attr/colorOnPrimary" />
 
     </com.google.android.material.appbar.AppBarLayout>

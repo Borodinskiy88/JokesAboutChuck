@@ -14,6 +14,8 @@ class JokesRepositoryImpl @Inject constructor(
     private val dao: JokesDao
 ) {
 
+    val allJokes = dao.getJokes()
+
     fun getJoke(): Flow<Jokes> = flow {
         val response = apiServiceImpl.getJoke()
         emit(response)

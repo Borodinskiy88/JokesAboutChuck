@@ -42,10 +42,12 @@ class ListJokesFragment : Fragment () {
         recyclerView.adapter = adapter
 
         viewModel.allJokes.observe(viewLifecycleOwner) {
-            adapter.submitList(listOf(it))
+            adapter.submitList(it)
         }
-        
 
+        binding.getButton.setOnClickListener {
+            viewModel.getJoke().observe(viewLifecycleOwner) {}
+        }
 
         return binding.root
     }
