@@ -6,4 +6,5 @@
     <string name="create_joke">Я тоже знаю одну!</string>
     <string name="show_detail">Ну-ка поподробнее!</string>
     <string name="joke">Шуточка о Чаке Норрисе</string>
+    <string name="full_joke">Покажите мне всю шутку!</string>
 </resources>

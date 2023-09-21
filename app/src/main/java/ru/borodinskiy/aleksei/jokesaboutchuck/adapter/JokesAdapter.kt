@@ -2,6 +2,7 @@ package ru.borodinskiy.aleksei.jokesaboutchuck.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,12 +13,16 @@ interface OnInteractionListener {
     fun onShowDetail(jokes: Jokes)
 }
 
+var flag = false
+
 class JokesAdapter(
     private val onInteractionListener: OnInteractionListener
 ) :
     ListAdapter<Jokes, JokesAdapter.JokesViewHolder>(DiffCallback) {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokesViewHolder {
+
 
         return JokesViewHolder(
             CardJokeBinding.inflate(LayoutInflater.from(parent.context), parent, false),
@@ -40,10 +45,19 @@ class JokesAdapter(
                 value.text = jokes.value
 
                 showButton.setOnClickListener {
-
                     onInteractionListener.onShowDetail(jokes)
+                   flag = true
+                }
+
+                if (flag) {
+                    value.isSingleLine = false
+                    value.ellipsize = null
+                    showButton.isVisible = false
+                    imageChuck.isVisible = true
                 }
             }
+
+            flag = false
         }
     }
 
@@ -58,4 +72,5 @@ class JokesAdapter(
             }
         }
     }
+
 }
