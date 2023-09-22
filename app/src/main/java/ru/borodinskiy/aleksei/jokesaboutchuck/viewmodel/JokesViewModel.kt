@@ -44,12 +44,13 @@ class JokesViewModel @Inject constructor(
         edited.value = empty
     }
 
-    fun changeJoke(value : String, id : String) {
+    fun changeJoke(value: String, id: String, created: String, updated: String) {
         val text = value.trim()
         if (edited.value?.value == text) {
             return
         }
-        edited.value = edited.value?.copy(value = text, id = id)
+        edited.value =
+            edited.value?.copy(value = text, id = id, created = created, updated = updated)
     }
 
 

@@ -12,6 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import ru.borodinskiy.aleksei.jokesaboutchuck.R
 import ru.borodinskiy.aleksei.jokesaboutchuck.databinding.FragmentCreateJokeBinding
 import ru.borodinskiy.aleksei.jokesaboutchuck.viewmodel.JokesViewModel
+import java.time.LocalDateTime
 import java.util.UUID
 
 @AndroidEntryPoint
@@ -28,18 +29,22 @@ class CreateJokeFragment : Fragment() {
 
         binding.saveButton.setOnClickListener {
             if (binding.jokeText.text.toString().isBlank()) {
-                    Snackbar.make(
-                        binding.root,
-                        R.string.necessary_fill,
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                    return@setOnClickListener
+                Snackbar.make(
+                    binding.root,
+                    R.string.necessary_fill,
+                    Snackbar.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
             }
             val id = UUID.randomUUID()
 
+            val date = LocalDateTime.now().toString()
+
             viewModel.changeJoke(
                 binding.jokeText.text.toString(),
-                id.toString()
+                id.toString(),
+                date,
+                date
             )
             viewModel.save()
             findNavController().navigate(R.id.action_createJokeFragment_to_listJokesFragment)

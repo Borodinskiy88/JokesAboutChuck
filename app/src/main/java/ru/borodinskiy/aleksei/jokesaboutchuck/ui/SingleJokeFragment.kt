@@ -53,7 +53,6 @@ class SingleJokeFragment : Fragment() {
             }
         }
 
-
         return binding.root
     }
 

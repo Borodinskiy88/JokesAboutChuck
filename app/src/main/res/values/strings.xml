@@ -4,8 +4,10 @@
     <string name="create_joke">Я тоже знаю одну!</string>
     <string name="show_detail">Ну-ка поподробнее!</string>
     <string name="joke">Шуточка о Чаке Норрисе</string>
-    <string name="full_joke">Покажите мне всю шутку!</string>
     <string name="tell_me_about_Chuck">Расскажи о Чаке Норрисе</string>
     <string name="proud_of_you">Чак гордится тобой!</string>
     <string name="necessary_fill">Так не пойдёт! Необходимо рассказать историю о Чаке Норрисе!</string>
+    <string name="facts_about">Факты о Чаке Норрисе</string>
+    <string name="fact">Факт</string>
+    <string name="add_fact">Добавить факт</string>
 </resources>

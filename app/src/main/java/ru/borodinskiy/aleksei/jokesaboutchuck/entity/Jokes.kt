@@ -11,7 +11,7 @@ data class Jokes(
     @SerializedName("created_at")
     val created: String = "",
     @SerializedName("icon_url")
-    val iconUrl: String = "",
+    val iconUrl: String = "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
     @SerializedName("id")
     val id: String,
     @SerializedName("updated_at")

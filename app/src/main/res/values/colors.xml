@@ -2,7 +2,6 @@
 <resources>
     <color name="red">#D50000</color>
     <color name="orange">#FF6D00</color>
-    <color name="yellow">#FFD600</color>
     <color name="red_light">#E37A7A</color>
     <color name="orange_light">#F6B07B</color>
     <color name="yellow_light">#FFED8D</color>
