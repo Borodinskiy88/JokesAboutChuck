@@ -24,4 +24,6 @@ class JokesRepositoryImpl @Inject constructor(
         dao.insert(response)
     }.flowOn(Dispatchers.IO)
 
+    suspend fun insert(jokes: Jokes) = dao.insert(jokes)
+
 }

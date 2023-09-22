@@ -55,6 +55,10 @@ class ListJokesFragment : Fragment () {
             viewModel.getJoke().observe(viewLifecycleOwner) {}
         }
 
+        binding.createButton.setOnClickListener {
+            findNavController().navigate(R.id.action_listJokesFragment_to_createJokeFragment)
+        }
+
         return binding.root
     }
 }

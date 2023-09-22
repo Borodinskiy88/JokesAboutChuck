@@ -9,15 +9,15 @@ data class Jokes(
     @PrimaryKey(autoGenerate = true)
     val jokeId: Int = 0,
     @SerializedName("created_at")
-    val created: String,
+    val created: String = "",
     @SerializedName("icon_url")
-    val iconUrl: String,
+    val iconUrl: String = "",
     @SerializedName("id")
     val id: String,
     @SerializedName("updated_at")
-    val updated: String,
+    val updated: String = "",
     @SerializedName("url")
-    val url: String,
+    val url: String = "",
     @SerializedName("value")
     val value: String
 )

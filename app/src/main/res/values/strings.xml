@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Jokes About Chuck</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="give_me_joke">Дай мне еще шутку!</string>
     <string name="create_joke">Я тоже знаю одну!</string>
     <string name="show_detail">Ну-ка поподробнее!</string>
     <string name="joke">Шуточка о Чаке Норрисе</string>
     <string name="full_joke">Покажите мне всю шутку!</string>
+    <string name="tell_me_about_Chuck">Расскажи о Чаке Норрисе</string>
+    <string name="proud_of_you">Чак гордится тобой!</string>
+    <string name="necessary_fill">Так не пойдёт! Необходимо рассказать историю о Чаке Норрисе!</string>
 </resources>
