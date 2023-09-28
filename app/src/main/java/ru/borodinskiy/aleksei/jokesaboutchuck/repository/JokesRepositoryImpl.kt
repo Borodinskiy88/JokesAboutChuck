@@ -19,9 +19,14 @@ class JokesRepositoryImpl @Inject constructor(
     fun getJokeById(jokeId : Int) = dao.getJokesById(jokeId)
 
     fun getJoke(): Flow<Jokes> = flow {
-        val response = apiServiceImpl.getJoke()
-        emit(response)
-        dao.insert(response)
+        try {
+            val response = apiServiceImpl.getJoke()
+            emit(response)
+            dao.insert(response)
+        } catch (e: Exception) {
+            //           e.message
+            return@flow
+        }
     }.flowOn(Dispatchers.IO)
 
     suspend fun insert(jokes: Jokes) = dao.insert(jokes)

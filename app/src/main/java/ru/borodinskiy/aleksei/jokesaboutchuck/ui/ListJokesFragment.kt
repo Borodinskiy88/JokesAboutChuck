@@ -1,9 +1,13 @@
 package ru.borodinskiy.aleksei.jokesaboutchuck.ui
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -52,7 +56,16 @@ class ListJokesFragment : Fragment () {
         }
 
         binding.getButton.setOnClickListener {
-            viewModel.getJoke().observe(viewLifecycleOwner) {}
+            if (checkForInternet(requireContext())) {
+                viewModel.getJoke().observe(viewLifecycleOwner) {}
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Чаку Норрису нужен интернет!!!",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
+            }
         }
 
         binding.createButton.setOnClickListener {
@@ -60,5 +73,18 @@ class ListJokesFragment : Fragment () {
         }
 
         return binding.root
+    }
+
+
+    private fun checkForInternet(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return when {
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            else -> false
+        }
     }
 }
